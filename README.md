@@ -2,7 +2,7 @@
 My Projects Relates to Computer Secreity
 
 ## Table of contents：
-* ransomware virus(persoanl project, code hidden to prevent spreading)
+* Ransomware Virus(persoanl project, code hidden to prevent spreading)
 	* Encrepted all specific type of files in the PC using random generated key and popup a blackmail
     * Key upload to server and  auto generate decryption program
     * All encrepted can be recovered using the generated decryption program
