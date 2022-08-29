@@ -1,0 +1,69 @@
+SHELL=/bin/sh
+PATH=/usr/local/lib/mh:$PATH
+MAILDIR=$HOME/Mail
+LOGFILE=$HOME/Mail/logfile
+SENDMAIL=/usr/sbin/sendmail
+#VERBOSE=1
+VERBOSE=0
+EOL="
+"
+LOG="$EOL$EOL$EOL"
+LOG="New message log:$EOL"
+LOG=`perl GET_MESSAGE_INDEX`
+LOG="$EOL"
+
+## Homework Number: 11
+## Name: Tingzhang Li
+## ECN Login: li3402
+## Due Date: 4/14/2022
+
+## junkMail 1 through junkMail 50: 
+## multiple entries in the “From:” header may be spam
+## my implmentation try to trap email contain at least
+## two items in the From header
+:0 :
+* ^From.*(.*<.*>),(.*<.*>)
+recipe_1
+
+
+## junkMail 51 through junkMail 63: 
+## basis of the "Subject"(apply to header and body)
+## I don't see much similar pattern on those email
+## so I just simply check if the subject line contains
+## some words share by some emails
+:0 HB:
+* ^Subject.*(medication|experience|degree|Diploma|measures|plill|buy|College|diploma|Inteveo)
+recipe_2
+
+
+## junkMail 64 through junkMail 66: 
+## basis of the content(apply to only body)
+## those eamils seem share some common words, 
+## so I used those words as filter
+## Target was on mail 64 and Palace on mail 65-66
+:0 B:
+* (Target|Palace)+
+recipe_3
+
+
+## junkMail 67 through junkMail 74: 
+## compound rules(apply to both header and body)
+## thsoe emails seem encode in html
+## A TA suggest to look at the Content-Type
+## I try to filter out all plain text email 
+## in html format, it seems work
+:0 HB:
+* ^Content-Type: text/html
+* ^Content-Type: text/plain
+recipe_4
+
+## This was from hw9, I this it's good to put all other 
+## emails into spamFolder file when testing
+## may need to common out when turn in for final
+## Recipe_5:
+## 
+## The rest of the email to your special account will be 
+## deposited in the file spamFolder
+
+## :0 :
+## spamFolder

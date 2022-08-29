@@ -1,0 +1,67 @@
+SHELL=/bin/sh
+PATH=/usr/local/lib/mh:$PATH
+MAILDIR=$HOME/Mail
+LOGFILE=$HOME/Mail/logfile
+SENDMAIL=/usr/sbin/sendmail
+#VERBOSE=1
+VERBOSE=0
+EOL="
+"
+LOG="$EOL$EOL$EOL"
+LOG="New message log:$EOL"
+LOG=`perl GET_MESSAGE_INDEX`
+LOG="$EOL"
+
+## Homework Number: 11
+## Name: Tingzhang Li
+## ECN Login: li3402
+## Due Date: 4/07/2022
+
+## junkMail 1 through junkMail 50: 
+## multiple entries in the “From:” header may be spam
+## my implmentation try to trap email contain at least
+## two item in the From header
+:0 :
+* ^From.*(.*<.*>),(.*<.*>)
+recipe_1
+
+
+## junkMail 51 through junkMail 63: 
+## basis of the "Subject"(apply to only header)
+## I don't see much similar pattern on those email
+## so I just simply check if the subject line contains
+## some words share by several emails
+:0 H:
+* ^Subject.*(medication|experience|degree|Diploma|measures|plill|buy|College|diploma|Inteveo)
+recipe_2
+
+
+## junkMail 64 through junkMail 66: 
+## basis of the content(apply to only body)
+## thos eamils seem share some common words, 
+## so I used those words as filter
+## Target was on mail 64 and Palace on mail 65-66
+:0 B:
+* (Target|Palace)+
+recipe_3
+
+
+## junkMail 67 through junkMail 74: 
+## compound rules(apply to both header and body)
+## thsoe emails seem contain some files/links in html
+## so filter out all non-base64-plain text email
+:0 HB:
+* ^Content-Type: text/html
+* !^Content-Type: text/plain
+* !^Content-Transfer-Encoding: base64
+recipe_4
+
+## This was from hw9, it may be good to put all other 
+## mails into spamFolder file when testing
+## Recipe_5:
+## 
+## The rest of the email to your special account will be 
+## deposited in the file spamFolder
+##
+:0 :
+spamFolder
