@@ -27,6 +27,6 @@ https://user-images.githubusercontent.com/70169080/187103673-9c63e60f-7043-4b34-
 ---
 ## This project is not for harmful usage, it's for my study only, to prevent illegal usage/people accidentally run the virus program, source code and main program of this project will not be published
 
-If you are interesting in encryption, you can look at my DES, RSA, AES encryption implmentation for my school project, it would be better to use more efficiency language like C/C++ instead of Python in practical, since encryption speed and resource usage is critical in computer security(eg, it would be easy to detect the virus if it keeps running on the background and use ton's of computing resource, but if the encryption happens instantly you won't even get the chance to catch the virus)
+If you are interesting in encryption, you can look at my [DES](https://github.com/tlistudents/Computer-Security/tree/main/DES), [RSA](https://github.com/tlistudents/Computer-Security/tree/main/RSA), [AES](https://github.com/tlistudents/Computer-Security/tree/main/AES) encryption implmentation for my school project, it would be better to use more efficiency language like C/C++ instead of Python in practical, since encryption speed and resource usage is critical in computer security(eg, it would be easy to detect the virus if it keeps running on the background and use ton's of computing resource, but if the encryption happens instantly you won't even get the chance to catch the virus)
 ---
-## My other computer security project can be found here 
+## My other computer security project can be found [here](https://github.com/tlistudents/Computer-Security) 
