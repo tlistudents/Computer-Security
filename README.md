@@ -2,7 +2,7 @@
 My Projects Relates to Computer Secreity
 
 ## Table of contents：
-* Ransomware Virus(persoanl project, code hidden to prevent spreading)
+* Ransomware Virus(code hidden to prevent spreading)
 	* Encrepted all specific type of files in the PC using random generated key and popup a blackmail
     * Key upload to server and  auto generate decryption program
     * All encrepted can be recovered using the generated decryption program
@@ -33,4 +33,4 @@ My Projects Relates to Computer Secreity
 * TCP attack
     * Implement SYN flood attack and SYN scanning to detect open ports
     * Use Wireshark to analyze packets
-* **Important: most of the projects are from my college course(ransomware virus is my own project but source code not published), please read only, do not copy and share it with other people, especially if you are a student who is taking the same course, you may risk expel from college if you copy the code for the course** 
+* **Important: some of the projects are from my college course(ransomware virus is my own project but source code not published), please read only, do not copy and share it with other people, especially if you are a student who is taking the same course, you may risk expel from college if you copy the code for the course** 
